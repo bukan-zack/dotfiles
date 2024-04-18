@@ -1,0 +1,60 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 40,
+  "reload_style_on_change": true,
+  "modules-left": [
+    "custom/launcher",
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "tray",
+    "backlight",
+    "pulseaudio",
+    "battery",
+    "clock"
+  ],
+  "custom/launcher": {
+    "format": "󰣇",
+    "on-click": "wlogout"
+  },
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 15
+  },
+  "tray": {
+    "spacing": 18
+  },
+  "backlight": {
+    "format": "󰃞",
+    "tooltip-format": "{percent}%",
+    "on-scroll-down": "brightnessctl s 1%-",
+    "on-scroll-up": "brightnessctl s +1%",
+    "device": "intel_backlight"
+  },
+  "pulseaudio": {
+    "scroll-step": 3,
+    "format": "{icon}",
+    "format-icons": {
+      "headphone": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "tooltip-format": "{volume}%",
+    "on-click": "pavucontrol"
+  },
+  "battery": {
+    "format": "{icon}",
+    "tooltip-format": "{capacity}%",
+    "tooltip-format-charging": "Charging; {capacity}%",
+    "format-icons": ["", "", "","", ""],
+    "interval": 30
+  },
+  "clock": {
+    "format": "{:%a %d %b %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "today-format": "<b>{}</b>"
+  }
+}
